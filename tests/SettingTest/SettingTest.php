@@ -4,7 +4,7 @@ namespace Tests\SettingTest;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Coco\Lib\Setting;
+use QzLaravel\Lib\Setting;
 
 class SettingTest extends \TestCase
 {

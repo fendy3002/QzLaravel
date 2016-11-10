@@ -1,6 +1,6 @@
 <?php
 
-namespace Coco\Foundation\Lib;
+namespace QzLaravel\Lib;
 use Session;
 
 class Context

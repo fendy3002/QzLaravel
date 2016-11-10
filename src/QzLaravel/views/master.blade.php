@@ -84,7 +84,7 @@
               @section('menu-top-right')
               @show
               <ul class="nav navbar-nav">
-                  @include("coco::userpanel")
+                  @include("qzlaravel::userpanel")
               </ul>
           </div>
         </nav>

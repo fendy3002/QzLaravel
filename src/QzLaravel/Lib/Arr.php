@@ -1,6 +1,6 @@
 <?php
 
-namespace Coco\Lib;
+namespace QzLaravel\Lib;
 use Session;
 
 class Arr

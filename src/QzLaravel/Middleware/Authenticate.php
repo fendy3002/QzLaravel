@@ -1,6 +1,6 @@
 <?php
 
-namespace Coco\Middleware;
+namespace QzLaravel\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -37,7 +37,7 @@ class Authenticate
         if(empty(\Cookie::get('jwt_auth'))){
             \Session::forget('user');
             $currentUrl = $request->url();
-            $loginUrl = config('coco.auth_url') .'/auth/login?redirect=' . $currentUrl;
+            $loginUrl = config('qz.auth_url') .'/auth/login?redirect=' . $currentUrl;
             return redirect($loginUrl);
         }
         return $this->checkSession($request, $next);
@@ -54,7 +54,7 @@ class Authenticate
 
     protected function checkTokenExpiry($request, Closure $next, $jwt)
     {
-        $authResponse = json_decode(\QzPhp\Q::Z()->url()->safeFetch(config('coco.auth_url') .'/auth/jwt/authenticate?token=' .
+        $authResponse = json_decode(\QzPhp\Q::Z()->url()->safeFetch(config('qz.auth_url') .'/auth/jwt/authenticate?token=' .
             $jwt->token)->content);
         if(!empty($authResponse->error) && $authResponse->error != ''){
             return $this->refreshToken($request, $next, $jwt);
@@ -66,14 +66,14 @@ class Authenticate
 
     protected function refreshToken($request, Closure $next, $jwt)
     {
-        $refreshResponseString = \QzPhp\Q::Z()->url()->safeFetch(config('coco.auth_url') .'/auth/jwt/refresh?token=' .
+        $refreshResponseString = \QzPhp\Q::Z()->url()->safeFetch(config('qz.auth_url') .'/auth/jwt/refresh?token=' .
             $jwt->token)->content;
         $refreshResponse = json_decode($refreshResponseString);
 
         if(!empty($refreshResponse->error) && $refreshResponse->error != ''){
             $toForget = \Cookie::forget('jwt_auth');
             $currentUrl = $request->url();
-            $loginUrl = config('coco.auth_url') .'/auth/login?redirect=' . $currentUrl;
+            $loginUrl = config('qz.auth_url') .'/auth/login?redirect=' . $currentUrl;
             return redirect($loginUrl)->withCookie($toForget);
         }
         \Session::put('user', json_encode($refreshResponse->user));

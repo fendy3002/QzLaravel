@@ -1,6 +1,6 @@
 <?php
 
-namespace Coco\Middleware;
+namespace QzLaravel\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +36,7 @@ class ApiAuthenticate
         }
     }
     public function getFromServer($key){
-        $authServer = config('coco.auth_url');
+        $authServer = config('qz.auth_url');
         $fetch = \QzPhp\Q::Z->url()->safeFetch($authServer . '/api/auth/login?key=' . $key);
 
         if($fetch->code == '200'){

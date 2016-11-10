@@ -1,6 +1,6 @@
 <?php
 
-namespace Coco\Controllers;
+namespace QzLaravel\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;

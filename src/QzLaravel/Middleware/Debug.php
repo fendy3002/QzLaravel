@@ -1,6 +1,6 @@
 <?php
 
-namespace Coco\Middleware;
+namespace QzLaravel\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

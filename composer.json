@@ -1,13 +1,13 @@
 {
-    "name": "coco/foundation",
-    "description": "Coders Colony Foundation",
+    "name": "qz/qzlaravel",
+    "description": "Qz Laravel Foundation",
     "keywords": ["library", "foundation"],
     "license": "MIT",
     "type": "project",
     "authors": [
         {
             "name": "Fendy Heryanto",
-            "email": "fendy.heryanto@coderscolony.com"
+            "email": "fendy3002@yahoo.com"
         }
     ],
     "minimum-stability": "dev",
@@ -16,7 +16,7 @@
             "type": "package",
             "package": {
                 "name": "qz/qzphp",
-                "version": "0.1.11",
+                "version": "0.1.1",
                 "source": {
                     "url": "https://github.com/fendy3002/QzPhp.git",
                     "type": "git",
@@ -31,7 +31,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "qz/qzphp": "0.1.11"
+        "qz/qzphp": "0.1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -42,7 +42,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Coco\\": "src/Coco"
+            "QzLaravel\\": "src/QzLaravel"
         }
     },
     "autoload-dev": {

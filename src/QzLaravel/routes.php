@@ -10,12 +10,12 @@
 |
 */
 
-Route::group(['prefix' => 'debug', 'namespace' => 'Coco\Controllers', 'middleware' => ['web', 'debug']], function () {
+Route::group(['prefix' => 'debug', 'namespace' => 'QzLaravel\Controllers', 'middleware' => ['web', 'debug']], function () {
     Route::get('/cookie/removejwt', 'CookieController@getRemoveJwt');
     Route::get('/cookie/jwtinfo', 'CookieController@getJwtInfo');
     Route::get('/session/flush', 'SessionController@flush');
 });
 
-Route::group(['prefix' => '_/auth', 'namespace' => 'Coco\Controllers', 'middleware' => ['web']], function () {
+Route::group(['prefix' => '_/auth', 'namespace' => 'QzLaravel\Controllers', 'middleware' => ['web']], function () {
     Route::get('/logout', 'AuthController@getLogout');
 });

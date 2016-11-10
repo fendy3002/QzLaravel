@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class SliceToArrayTest extends \TestCase
 {
     public function test(){
-        $arr = new \Coco\Lib\Arr();
+        $arr = new \QzLaravel\Lib\Arr();
         $source = [
             (object)[ 'col1' => 1, 'col2' => 1],
             (object)[ 'col1' => 2, 'col2' => 2],

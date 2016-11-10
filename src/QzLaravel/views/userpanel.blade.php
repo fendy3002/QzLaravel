@@ -30,7 +30,7 @@
         <!-- Menu Footer-->
         <li class="user-footer">
             <div class="pull-left">
-                <a href="{{ config('coco.auth_url') }}" target="_blank" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Profile</a>
+                <a href="{{ config('qzlaravel.auth_url') }}" target="_blank" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Profile</a>
             </div>
             <div class="pull-right">
                 <a href="{!! url('_/auth/logout') !!}" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
