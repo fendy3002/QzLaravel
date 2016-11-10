@@ -1,6 +1,6 @@
 <?php
 
-namespace QzLaravel\Controllers;
+namespace QzLaravel\Controllers\Api;
 
 use App\User;
 use App\Http\Controllers\Controller;
@@ -11,6 +11,6 @@ class SessionController extends Controller
     public function flush()
     {
         \Session::flush();
-        return response('', 200);
+        return response('[]', 200);
     }
 }

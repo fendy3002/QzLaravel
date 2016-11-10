@@ -10,10 +10,17 @@
 |
 */
 
-Route::group(['prefix' => 'debug', 'namespace' => 'QzLaravel\Controllers', 'middleware' => ['web', 'debug']], function () {
-    Route::get('/cookie/removejwt', 'CookieController@getRemoveJwt');
-    Route::get('/cookie/jwtinfo', 'CookieController@getJwtInfo');
-    Route::get('/session/flush', 'SessionController@flush');
+Route::group(['prefix' => 'debug', 'namespace' => 'QzLaravel\Controllers', 'middleware' => ['debug']], function () {
+    Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+        Route::group(['middleware' => ['web']], function () {
+            Route::get('/cookie/removejwt', 'CookieController@getRemoveJwt');
+            Route::get('/cookie/jwtinfo', 'CookieController@getJwtInfo');
+            Route::get('/session/flush', 'SessionController@flush');
+        });
+
+        Route::get('/log', 'LogController@getList');
+        Route::get('/log/{file}', 'LogController@getDetail');
+    });
 });
 
 Route::group(['prefix' => '_/auth', 'namespace' => 'QzLaravel\Controllers', 'middleware' => ['web']], function () {

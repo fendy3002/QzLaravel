@@ -1,6 +1,6 @@
 <?php
 
-namespace QzLaravel\Controllers;
+namespace QzLaravel\Controllers\Api;
 
 use App\User;
 use App\Http\Controllers\Controller;
@@ -14,11 +14,14 @@ class CookieController extends Controller
         if(!empty($token)){
             $token = $token->token;
         }
-        return response($token, 200);
+        $response = [
+            'token' => $token
+        ];
+        return response(json_encode($response), 200);
     }
 
     public function getRemoveJwt()
     {
-        return response('',200)->withCookie(\Cookie::forget('jwt_auth'));
+        return response('[]', 200)->withCookie(\Cookie::forget('jwt_auth'));
     }
 }
